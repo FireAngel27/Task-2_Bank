@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/Bank.dir/src/main.cpp.o CMakeFiles/Bank.dir/src/Application.cpp.o CMakeFiles/Bank.dir/src/Bank.cpp.o CMakeFiles/Bank.dir/src/Account.cpp.o CMakeFiles/Bank.dir/src/ExNotEnoughMoney.cpp.o  -o Bank 

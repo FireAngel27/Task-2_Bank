@@ -1,0 +1,67 @@
+Commands:
+
+insert <id> <suma>
+withdraw <id> <suma>
+transfer <z_id> <do_id> <suma>
+create <id>
+delete <id>
+info [<id>]
+exit
+------------------------------------------------------------------------
+Application
+    Run() {
+        Test();
+    }
+    Test() {
+        Bank bank = new Bank();
+        bank.CreateAccount(....);
+        bank.InsertMoney(1, 1000);
+        bank.PrintInfo(1);
+    }
+    Exit()
+
+Bank
+    vector<Account*> accounts_list
+
+    CreateAccount(int id) {
+        account_list.push_back(new Account(id))
+    }
+    DeleteAccount(int id) {
+        // Find index at which to remove.
+        Account *account = account_list[i];
+        delete account;
+        account_list.erase(account_list.begin() + i);
+    }
+    InsertMoney(int id, double money_amount) {
+        Account* account = FindAccount(id);
+        account->InsertMoney(money_amount);
+        (*account).InsertMoney(money_amount);
+    }
+    WithdrawMoney(int id, double money_amount)
+    TransferMoney(int id_from, int id_to, double money_amount);
+    PrintInfo() {
+        foreach (account : accounts_list) {
+            cout << account.GetId() << " " << account.GetMoneyAmount() << endl;
+        }
+    }
+    PrintInfo(int id)
+
+private:
+    Account* FindAccount(int id) {
+        foreach (account : account_list) {
+            if (account.GetId() == id) return account;
+        }
+        throw exception that account has not been found
+    }
+
+-------------------------------------------------------------------------------
+Account
+    int id
+    double money_amount
+
+    __new__(id)
+    GetId()
+    InsertMoney(double money_amount)
+    WithdrawMoney(double money_amount) // Exception!
+    GetMoneyAmount()
+
